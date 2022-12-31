@@ -17,8 +17,7 @@ MyVolume - общая для всех контейнеров область хр
 3. Далее прописать в терминале ```docker run -v MyVolume:/home -p 80:8000 MyContainer```
 #
 __После третьего шага поднимется [jyputerhub](http://localhost:80)[^2]:
-    Логин: ```admin```
-#
+    Логин: ```admin```; 
     Пароль: ```admin```__ 
 
 #
