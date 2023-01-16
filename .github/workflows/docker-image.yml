@@ -18,7 +18,7 @@ jobs:
       run: docker volume create MyVolume
       
     - name: Build the Docker image
-      run: docker build -t mydocker /../../laba/Dockerfile
+      run: docker build -t mydocker /laba/Dockerfile
     - name: Run the Docker container
       run: docker run -v MyVolume:/home -p 80:8000 mydocker
       
