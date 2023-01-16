@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Create volume
+      run: docker volume create MyVolume
+      
+    - name: Build the Docker image
+      run: docker build -t mydocker .
+    - name: Run the Docker container
+      run: docker run -v MyVolume:/home -p 80:8000 mydocker
+      
